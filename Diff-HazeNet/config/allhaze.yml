@@ -1,0 +1,47 @@
+data:
+    dataset: "AllHaze"
+    # patch size
+    image_size: 64
+    restore_size: 64
+    channels: 3
+    num_workers: 0
+    data_dir: "datasets/allhaze"
+    conditional: True
+
+model:
+    in_channels: 3
+    out_ch: 3
+    ch: 128
+    ch_mult: [1, 2, 4, 8]
+    num_res_blocks: 2
+    attn_resolutions: [16, ]
+    dropout: 0.0
+    ema_rate: 0.999
+    ema: True
+    resamp_with_conv: True
+
+diffusion:
+    beta_schedule: linear
+    beta_start: 0.0001
+    beta_end: 0.02
+    num_diffusion_timesteps: 1000
+
+optim:
+    weight_decay: 0.000
+    optimizer: "Adam"
+    lr: 0.00002
+    amsgrad: False
+    eps: 0.00000001
+    epoch: 641
+
+training:
+    batch_size: 2
+    patch_n: 8
+    n_epochs: 2000
+    n_iters: 2000000
+    snapshot_freq: 500
+    validation_freq: 3000
+
+sampling:
+    batch_size: 1
+    last_only: True
