@@ -15,13 +15,22 @@ We use datasets in our experiments:
     │─── datasets-name
         │─── train
             │─── clear
-                │─── 1.jpg
+                │─── train_clear_1.jpg
             │─── haze
+                │─── train_haze_1.jpg
         │─── test
             │─── clear
+                │─── test_clear_1.jpg
             │─── haze
+                │─── test_haze_1.jpg
         │─── train_list.txt
 
 
 # Environment
 Python 3.10 and PyTorch 2.2.2 installed, and is configured with CUDA 12.6 to support GPU acceleration. A single NVIDIA RTX 4090 graphics card is utilized in the experiment.
+
+# Training
+python train.py
+
+# Structure and others
+will be announced after the paper is accepted.
